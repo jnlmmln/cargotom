@@ -1,5 +1,6 @@
 name: Build
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -21,6 +22,9 @@ jobs:
           - name: x86_64-unknown-linux-gnu # linux-amd64
             runner: ubuntu-latest
             target: x86_64-unknown-linux-gnu
+          - name: aarch64-unknown-linux-gnu # linux-arm
+            runner: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
           - name: x86_64-pc-windows-msvc # win-amd64
             runner: windows-latest
             target: x86_64-pc-windows-msvc
